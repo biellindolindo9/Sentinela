@@ -1,347 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Sentinela Hospitalar</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
-      background:
-        linear-gradient(135deg, #071d35, #0a4670);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-    }
-
-    .container {
-      width: min(1000px, 94%);
-      min-height: 570px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      background: rgba(255,255,255,.98);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 25px 70px rgba(0,0,0,.3);
-    }
-
-    .hospital {
-      padding: 55px;
-      background:
-        linear-gradient(145deg, #06365a, #087ca8);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .logo {
-      width: 68px;
-      height: 68px;
-      background: white;
-      color: #087ca8;
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 34px;
-      font-weight: bold;
-      margin-bottom: 25px;
-    }
-
-    .hospital h1 {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .hospital h2 {
-      font-size: 20px;
-      font-weight: 400;
-      opacity: .9;
-      margin-bottom: 35px;
-    }
-
-    .hospital p {
-      max-width: 430px;
-      line-height: 1.7;
-      color: rgba(255,255,255,.8);
-    }
-
-    .features {
-      margin-top: 35px;
-      display: grid;
-      gap: 13px;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-    }
-
-    .feature span {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .login {
-      padding: 55px 45px;
-      color: #16324a;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .login h2 {
-      font-size: 29px;
-      margin-bottom: 8px;
-    }
-
-    .login > p {
-      color: #718096;
-      margin-bottom: 30px;
-      font-size: 14px;
-    }
-
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 7px;
-      color: #34495e;
-    }
-
-    input {
-      width: 100%;
-      padding: 14px 15px;
-      border: 1px solid #dce5ec;
-      border-radius: 10px;
-      margin-bottom: 18px;
-      outline: none;
-      font-size: 14px;
-      transition: .2s;
-    }
-
-    input:focus {
-      border-color: #0781aa;
-      box-shadow: 0 0 0 3px rgba(7,129,170,.1);
-    }
-
-    button {
-      border: 0;
-      border-radius: 10px;
-      background: #087ca8;
-      color: white;
-      padding: 15px;
-      width: 100%;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    button:hover {
-      background: #05658a;
-      transform: translateY(-1px);
-    }
-
-    #erro {
-      min-height: 22px;
-      color: #d92d20;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .footer {
-      margin-top: 28px;
-      text-align: center;
-      font-size: 12px;
-      color: #9aa7b2;
-    }
-
-    @media (max-width: 760px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-
-      .hospital {
-        padding: 35px;
-      }
-
-      .hospital p,
-      .features {
-        display: none;
-      }
-
-      .hospital h1 {
-        font-size: 32px;
-      }
-
-      .login {
-        padding: 35px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Respawn - Sistema de Monitoramento e Gestão</title>
+    <!-- Estilos base do sistema -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="container">
+    <!-- Cabeçalho Principal (Header Institucional) -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo e Nome do Hospital -->
+            <div class="brand-container">
+                <!-- Ajuste o src abaixo para o nome correto do seu arquivo de imagem (ex: logo.png, logo.svg) -->
+                <img src="logo.png" alt="Logo Hospital Respawn" class="hospital-logo">
+                <div class="brand-text">
+                    <h1>Hospital Respawn</h1>
+                    <span class="system-tag">Sistema Sentinela | Acesso Restrito</span>
+                </div>
+            </div>
 
-    <section class="hospital">
-
-      <div class="logo">✚</div>
-
-      <h1>Sentinela</h1>
-
-      <h2>Sistema Integrado de Gestão Hospitalar</h2>
-
-      <p>
-        Plataforma para gerenciamento do atendimento,
-        triagem, consultas médicas e comunicação com
-        pacientes em ambiente hospitalar.
-      </p>
-
-      <div class="features">
-
-        <div class="feature">
-          <span>✓</span>
-          Atendimento integrado
+            <!-- Informações da Sessão do Usuário -->
+            <div class="user-info">
+                <span class="user-status">Operacional</span>
+                <span class="user-name">Usuário: Profissional de Saúde</span>
+                <button id="btn-logout" class="btn-secondary">Sair</button>
+            </div>
         </div>
+    </header>
 
-        <div class="feature">
-          <span>✓</span>
-          Classificação de risco
-        </div>
+    <!-- Barra de Navegação Interna -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#dashboard" class="active">Painel Principal</a></li>
+            <li><a href="#leitos">Gestão de Leitos</a></li>
+            <li><a href="#pacientes">Prontuários e Pacientes</a></li>
+            <li><a href="#alertas">Alertas de Emergência</a></li>
+            <li><a href="#configuracoes">Configurações</a></li>
+        </ul>
+    </nav>
 
-        <div class="feature">
-          <span>✓</span>
-          Gestão médica
-        </div>
+    <!-- Conteúdo Principal da Aplicação -->
+    <main class="content-container">
+        
+        <!-- Painel de Status Geral -->
+        <section id="dashboard" class="dashboard-section">
+            <h2>Visão Geral do Unidade</h2>
 
-        <div class="feature">
-          <span>✓</span>
-          Comunicação com pacientes
-        </div>
+            <div class="cards-grid">
+                <div class="card card-status">
+                    <h3>Leitos Ocupados</h3>
+                    <p class="metric-number" id="metric-leitos-ocupados">--</p>
+                </div>
 
-      </div>
+                <div class="card card-status">
+                    <h3>Alertas Ativos</h3>
+                    <p class="metric-number metric-alert" id="metric-alertas">--</p>
+                </div>
 
-    </section>
+                <div class="card card-status">
+                    <h3>Pacientes Monitorados</h3>
+                    <p class="metric-number" id="metric-pacientes">--</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="login">
+        <!-- Seção de Alertas em Tempo Real -->
+        <section id="alertas" class="alerts-section">
+            <h2>Alertas da Unidade em Tempo Real</h2>
+            <div id="alerts-container" class="alerts-list">
+                <p class="placeholder-text">Aguardando atualização do sistema de monitoramento...</p>
+            </div>
+        </section>
 
-      <h2>Acesso ao sistema</h2>
+        <!-- Seção de Tabela de Pacientes/Monitoramento -->
+        <section id="pacientes" class="table-section">
+            <h2>Monitoramento de Pacientes</h2>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Leito</th>
+                            <th>Paciente</th>
+                            <th>Status Vital</th>
+                            <th>Última Atualização</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-patients-body">
+                        <tr>
+                            <td colspan="5" class="table-placeholder">Carregando dados dos leitos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-      <p>Entre com suas credenciais institucionais.</p>
+    </main>
 
-      <form id="loginForm">
+    <!-- Rodapé Interno Institucional -->
+    <footer class="main-footer">
+        <p>&copy; Hospital Respawn - Sistema Interno de Gestão Sentinela. Todos os direitos reservados.</p>
+    </footer>
 
-        <label for="usuario">Usuário</label>
-
-        <input
-          id="usuario"
-          type="text"
-          autocomplete="username"
-          placeholder="Digite seu usuário"
-          required
-        >
-
-        <label for="senha">Senha</label>
-
-        <input
-          id="senha"
-          type="password"
-          autocomplete="current-password"
-          placeholder="Digite sua senha"
-          required
-        >
-
-        <div id="erro"></div>
-
-        <button type="submit">
-          Entrar no sistema
-        </button>
-
-      </form>
-
-      <div class="footer">
-        Sentinela Hospitalar • Sistema interno
-      </div>
-
-    </section>
-
-  </div>
-
-  <script>
-    const form = document.getElementById("loginForm");
-    const erro = document.getElementById("erro");
-
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault();
-
-      erro.textContent = "";
-
-      try {
-
-        const resposta = await fetch("/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            usuario: document.getElementById("usuario").value,
-            senha: document.getElementById("senha").value
-          })
-        });
-
-        const data = await resposta.json();
-
-        if (!resposta.ok) {
-          erro.textContent = data.erro || "Login inválido";
-          return;
-        }
-
-        localStorage.setItem(
-          "sentinela_usuario",
-          JSON.stringify(data)
-        );
-
-        if (data.tipo === "triagem") {
-          location.href = "triagem.html";
-        } else if (data.tipo === "medico") {
-          location.href = "medico.html";
-        } else if (data.tipo === "atendimento") {
-          location.href = "atendimento.html";
-        } else if (data.tipo === "tv") {
-          location.href = "tv.html";
-        } else {
-          location.href = "atendimento.html";
-        }
-
-      } catch (error) {
-
-        console.error(error);
-
-        erro.textContent =
-          "Não foi possível conectar ao servidor.";
-      }
-    });
-  </script>
-
+    <!-- Scripts da Aplicação -->
+    <script src="script.js"></script>
 </body>
 </html>
