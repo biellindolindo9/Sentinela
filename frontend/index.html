@@ -3,81 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Respawn - Sistema de Monitoramento e Gestão</title>
-    <!-- Estilos base do sistema -->
+    <title>Sentinela - Monitoramento Hospitalar Inteligente</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho Principal (Header Institucional) -->
+    <!-- Header / Navbar -->
     <header class="main-header">
         <div class="header-container">
-            <!-- Logo e Nome do Hospital -->
             <div class="brand-container">
-                <!-- Ajuste o src abaixo para o nome correto do seu arquivo de imagem (ex: logo.png, logo.svg) -->
-                <img src="logo.png" alt="Logo Hospital Respawn" class="hospital-logo">
-                <div class="brand-text">
-                    <h1>Hospital Respawn</h1>
-                    <span class="system-tag">Sistema Sentinela | Acesso Restrito</span>
-                </div>
+                <h1 class="brand-title">Sentinela</h1>
+                <p class="brand-subtitle">Sistema Inteligente de Gestão Hospitalar</p>
             </div>
-
-            <!-- Informações da Sessão do Usuário -->
-            <div class="user-info">
-                <span class="user-status">Operacional</span>
-                <span class="user-name">Usuário: Profissional de Saúde</span>
-                <button id="btn-logout" class="btn-secondary">Sair</button>
-            </div>
+            <nav class="nav-links">
+                <a href="#sobre">Sobre o Sistema</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#dashboard">Painel</a>
+                <a href="#login" class="btn-login">Acessar Sistema</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Barra de Navegação Interna -->
-    <nav class="main-nav">
-        <ul>
-            <li><a href="#dashboard" class="active">Painel Principal</a></li>
-            <li><a href="#leitos">Gestão de Leitos</a></li>
-            <li><a href="#pacientes">Prontuários e Pacientes</a></li>
-            <li><a href="#alertas">Alertas de Emergência</a></li>
-            <li><a href="#configuracoes">Configurações</a></li>
-        </ul>
-    </nav>
+    <!-- Hero Section / Apresentação -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>Tecnologia e Inovação para Cuidados de Saúde</h2>
+            <p>O Sentinela oferece monitoramento em tempo real, gestão otimizada de leitos e alertas instantâneos para equipes médicas, garantindo eficiência e precisão no atendimento.</p>
+            <div class="hero-buttons">
+                <a href="#dashboard" class="btn-primary">Ver Demonstração</a>
+                <a href="#contato" class="btn-secondary">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Conteúdo Principal da Aplicação -->
+    <!-- Conteúdo Principal / Dashboard -->
     <main class="content-container">
         
-        <!-- Painel de Status Geral -->
+        <section id="sobre" class="info-section">
+            <h2>Sobre a Plataforma</h2>
+            <p>Desenvolvido para automatizar e otimizar o fluxo de informações dentro de unidades de saúde, conectando profissionais de saúde a dados críticos em tempo real.</p>
+        </section>
+
+        <!-- Painel Geral -->
         <section id="dashboard" class="dashboard-section">
-            <h2>Visão Geral do Unidade</h2>
+            <h2>Painel de Monitoramento</h2>
 
             <div class="cards-grid">
                 <div class="card card-status">
-                    <h3>Leitos Ocupados</h3>
-                    <p class="metric-number" id="metric-leitos-ocupados">--</p>
+                    <h3>Leitos Ativos</h3>
+                    <p class="metric-number" id="metric-leitos-ocupados">0</p>
                 </div>
 
                 <div class="card card-status">
-                    <h3>Alertas Ativos</h3>
-                    <p class="metric-number metric-alert" id="metric-alertas">--</p>
+                    <h3>Alertas do Sistema</h3>
+                    <p class="metric-number metric-alert" id="metric-alertas">0</p>
                 </div>
 
                 <div class="card card-status">
-                    <h3>Pacientes Monitorados</h3>
-                    <p class="metric-number" id="metric-pacientes">--</p>
+                    <h3>Pacientes Registrados</h3>
+                    <p class="metric-number" id="metric-pacientes">0</p>
                 </div>
             </div>
         </section>
 
-        <!-- Seção de Alertas em Tempo Real -->
-        <section id="alertas" class="alerts-section">
-            <h2>Alertas da Unidade em Tempo Real</h2>
-            <div id="alerts-container" class="alerts-list">
-                <p class="placeholder-text">Aguardando atualização do sistema de monitoramento...</p>
-            </div>
-        </section>
-
-        <!-- Seção de Tabela de Pacientes/Monitoramento -->
+        <!-- Seção de Pacientes -->
         <section id="pacientes" class="table-section">
-            <h2>Monitoramento de Pacientes</h2>
+            <h2>Tabela de Acompanhamento</h2>
             <div class="table-wrapper">
                 <table class="data-table">
                     <thead>
@@ -91,7 +82,7 @@
                     </thead>
                     <tbody id="table-patients-body">
                         <tr>
-                            <td colspan="5" class="table-placeholder">Carregando dados dos leitos...</td>
+                            <td colspan="5" class="table-placeholder">Nenhum dado carregado.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -100,12 +91,11 @@
 
     </main>
 
-    <!-- Rodapé Interno Institucional -->
+    <!-- Rodapé -->
     <footer class="main-footer">
-        <p>&copy; Hospital Respawn - Sistema Interno de Gestão Sentinela. Todos os direitos reservados.</p>
+        <p>&copy; Sentinela - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts da Aplicação -->
     <script src="script.js"></script>
 </body>
 </html>
